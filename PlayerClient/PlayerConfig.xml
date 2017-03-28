@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--本xml配置文件初始化由代码生成，可以按需对节点进行修改，详情参考各节点注释-->
+<root>
+  <PlayTitle>test主题</PlayTitle>
+  <!-- 播放期限 -->
+  <PlayTime>
+    <!-- 播放开始日期 -->
+    <StartDate>2017-03-31 00:00:00</StartDate>
+
+    <!-- 播放结束日期 -->
+    <StopDate>
+      <!-- 如果有具体的截止日期 在此节点上修改-->
+      <deadline>2017-03-25</deadline>
+
+      <!-- 没有具体的截止日期, 比如持续24周，持续3个月，等等-->
+      <!-- 单位 week,day,month,year,-->
+      <unit>week</unit>
+      <!-- 数量-->
+      <num>24</num>
+    </StopDate>
+  </PlayTime>
+  <!-- 音频文件路径 -->
+  <VoiceFile>E:\PlayAssociation\天府三街.mp3</VoiceFile>
+  <InitializeVoice name="cloudmusic" level="50" />
+  <!--语音播放开始 指定程序设置音量-->
+  <VoicePlayStart>
+    <volume name="cloudmusic" type="ad" level="0" />
+    <volume name="playerclient" type="voice" level="20" />
+  </VoicePlayStart>
+  <!--语音播放停止 指定程序设置音量-->
+  <VoicePlayStop>
+    <!--name 进程名 level音量0-100-->
+    <volume name="cloudmusic" type="ad" />
+    <volume name="playerclient" type="voice" level="0" />
+  </VoicePlayStop>
+  <!--高峰时期-->
+  <Fastigium>
+    <param name="FastigiumTime">
+      <!--高峰时间段1-->
+      <time start="7:00" end="9:00" />
+      <!--高峰时间段2-->
+      <time start="17:30" end="19:00" />
+    </param>
+    <!--播放间隔-->
+    <!--时间间隔 单位分钟-->
+    <param name="interval" value="1" />
+  </Fastigium>
+  <!--平谷时期-->
+  <Normal>
+    <param name="NormalTime">
+      <!--平谷时间段1-->
+      <time start="6:00" end="7:00" />
+      <!--平谷时间段2-->
+      <time start="9:00" end="17:30" />
+      <!--平谷时间段3-->
+      <time start="19:00" end="23:00" />
+    </param>
+    <!--播放间隔-->
+    <!--时间间隔 单位分钟-->
+    <param name="interval" value="0.3" />
+  </Normal>
+</root>
